@@ -36,7 +36,7 @@ def termbank_creator(dict_file):
         text = match.group()
 
         # Mark split with newline
-        text = text.removesuffix("/") + "\n"
+        text = " (" + text.removeprefix("/").removesuffix("/") + ")\n"
 
         # Sometimes there's not a space after comma
         # First, delete space to avoid double spaces
