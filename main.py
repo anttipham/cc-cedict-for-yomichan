@@ -8,7 +8,7 @@ OUTPUT_FOLDER = "CC-CEDICT.zip"
 TERM_BANK_SIZE = 4000
 
 
-def parser():
+def parse_file():
     """Parses cmd argument. Returns the dictionary file object."""
     parser = argparse.ArgumentParser("main.py", description="Converts CC-CEDICT file to a Yomichan-compatible dictionary format")
     parser.add_argument("dictpath", type=argparse.FileType("r", encoding="utf-8"))
@@ -94,7 +94,7 @@ def format_obj(obj):
 
 
 def main():
-    dict_file = parser()
+    dict_file = parse_file()
 
     with zipfile.ZipFile(OUTPUT_FOLDER, "w") as zipf:
         zipf.writestr("index.json", format_obj(create_index(dict_file)))
