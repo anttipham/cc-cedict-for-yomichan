@@ -1,13 +1,27 @@
-# CC-CEDICT to Yomichan converter
+# CC-CEDICT dictionary for Yomichan
 
 A Python script that converts the CC-CEDICT file to a Yomichan-supported dictionary file.
 
-CC-CEDICT can be downloaded from here. https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+[Yomichan](https://foosoft.net/projects/yomichan/) is a browser extension, mainly used for Japanese, which allows opening dictionaries when mouse is over a word.
 
-Yomichan is a pop-up dictionary. https://foosoft.net/projects/yomichan/
-
-Although there exists already a CC-CEDICT (https://gist.github.com/shoui520/25460fd2e9fb194d3e5152fa2ce42ca2), it is not simplistic enough, for example pinyin can be seen twice. So, I created my own converter.
+Although there already exists a [CC-CEDICT dictionary](https://gist.github.com/shoui520/25460fd2e9fb194d3e5152fa2ce42ca2) from shoui, it is not simplistic enough, for example the searched word and its pinyin can be seen twice. Thus, I created my own version for it.
 
 ![Yomichan with 课 opened](img/1.png)
 
-The converted dictionary has a new bullet point after classifiers (CL) because there usually is a new meaning after them. Other dictionaries usually lump everything into one line, which is not desirable.
+The dictionary has new bullet points after classifiers (CL) because there usually is a new meaning after them. Other dictionaries usually lump everything into one line, which is not desirable.
+
+### Download
+https://github.com/anttipham/cedict-to-yomichan/releases/download/2022-01-11/CC-CEDICT.zip
+
+### Install
+
+1. You need to have [Yomichan](https://foosoft.net/projects/yomichan/)
+2. Download the dictionary from above and don't unzip it
+3. Yomichan > Settings > Dictionaries > Configure installed and enabled dictionaries... > Import
+4. Choose the dictionary (zip file)
+
+### Build
+
+CC-CEDICT can be downloaded from here. https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+
+Run by typing `main.py <unpacked cc-cedict filepath>`
