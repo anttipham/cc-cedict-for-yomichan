@@ -11,14 +11,14 @@ Although there already exists a [CC-CEDICT dictionary](https://gist.github.com/s
 The dictionary has new bullet points after classifiers (CL) because there usually is a new meaning after them. Other dictionaries usually lump everything into one line, which is not desirable.
 
 ### Download
-https://github.com/anttipham/cedict-to-yomichan/releases/download/2022-01-11/CC-CEDICT.zip
+https://github.com/anttipham/cc-cedict-for-yomichan/releases/latest
 
 ### Install
 
-1. You need to have [Yomichan](https://foosoft.net/projects/yomichan/)
-2. Download the dictionary from above and don't unzip it
-3. Yomichan > Settings > Dictionaries > Configure installed and enabled dictionaries... > Import
-4. Choose the dictionary (zip file)
+1. You need to have [Yomichan](https://foosoft.net/projects/yomichan/).
+2. Download the dictionary (zip file) from the Download section and don't unzip it.
+3. Yomichan > Settings > Dictionaries > Configure installed and enabled dictionaries... > Import.
+4. Choose the dictionary (zip file).
 
 ### Build
 
