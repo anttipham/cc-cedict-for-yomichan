@@ -1,0 +1,4 @@
+*.json
+*.txt
+*.u8
+__pycache__
