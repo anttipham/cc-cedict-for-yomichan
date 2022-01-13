@@ -32,12 +32,29 @@ def termbank_creator(dict_file):
     def to_pinyin(match):
         return decode_pinyin(match.group())
 
+    def split_CL(match):
+        text = match.group()
+
+        # Mark split with newline
+        text = text.removesuffix("/") + "\n"
+
+        # Sometimes there's not a space after comma
+        # First, delete space to avoid double spaces
+        text = text.replace(", ", ",")
+        # Then add the space
+        text = text.replace(",", ", ")
+
+        # Also add spaces to colons
+        text = text.replace(":", ": ")
+        return text
+
     index = 1
 
     def create_termbank():
         nonlocal index
 
         termbank = []
+        # line = "課 课 [ke4] /subject/course/CL:門|门[men2]/class/lesson/CL:堂[tang2],節|节[jie2]/to levy/tax/form of divination/"
         for line in dict_file:
             if len(termbank) >= TERM_BANK_SIZE:
                 return termbank
@@ -46,7 +63,13 @@ def termbank_creator(dict_file):
             matches = chars.split()
             if matches[0] == matches[1]:
                 del matches[1]
-            meanings = meaning.removeprefix("/").removesuffix("/").split("/")
+
+            # The meaning part starts and ends with slashes
+            meaning = meaning.removeprefix("/").removesuffix("/")
+            # Different word starts after the counter
+            meaning = re.sub(r"\/CL:.+?\/", split_CL, meaning)
+            meaning = meaning.replace("/", "; ")
+            meanings = meaning.split("\n")
             entries = [[match, pronunciation, "", "", 2, meanings, index, ""] for match in matches]
             termbank.extend(entries)
             index += 1
