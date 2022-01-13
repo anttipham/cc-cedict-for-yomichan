@@ -68,7 +68,7 @@ def termbank_creator(dict_file):
             meaning = meaning.removeprefix("/").removesuffix("/")
             # Different word starts after the counter
             meaning = re.sub(r"\/CL:.+?\/", split_CL, meaning)
-            meaning = meaning.replace("/", "; ")
+            meaning = meaning.replace("/", ", ")
             meanings = meaning.split("\n")
             entries = [[match, pronunciation, "", "", 2, meanings, index, ""] for match in matches]
             termbank.extend(entries)
