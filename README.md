@@ -10,6 +10,10 @@ Although there already exists a [CC-CEDICT dictionary](https://gist.github.com/s
 
 The dictionary has new bullet points after classifiers (CL) because there usually is a new meaning after them. Other dictionaries usually lump everything into one line, which is not desirable.
 
+It is also possible to use bullet points as the seperator instead of commas and express tones with numbers. Bullet points make sense with words which don't have classifiers. Tone numbers are useful because ā and ǎ look the same when the font is small.
+
+![Yomichan with 课 opened with bullet points as the seperator and pinyin with number tones](img/课-seperate-pinyinnumber.PNG)
+
 ### Download
 https://github.com/anttipham/cc-cedict-for-yomichan/releases/latest
 
@@ -24,4 +28,8 @@ https://github.com/anttipham/cc-cedict-for-yomichan/releases/latest
 
 CC-CEDICT can be downloaded from here. https://www.mdbg.net/chinese/dictionary?page=cc-cedict
 
-Run by typing `main.py <unpacked cc-cedict filepath>`
+Run by typing
+```
+main.py <unpacked cc-cedict filepath>
+```
+If you want bullet point seperators, use `--seperate` flag. Pinyin numbers can be enabled with `--pinyin-numbers` flag.
