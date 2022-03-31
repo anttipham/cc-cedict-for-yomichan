@@ -45,6 +45,10 @@ def create_index(dict_file):
 
 
 def termbank_creator(args: Args):
+    def format_pinyin(match):
+        pinyin: str = match.group().lower()
+        return pinyin.replace("u:", "ü")
+
     def to_pinyin(match):
         return decode_pinyin(match.group())
 
@@ -75,10 +79,9 @@ def termbank_creator(args: Args):
             if len(termbank) >= TERM_BANK_SIZE:
                 return termbank
 
-            if args.is_number:
-                pinyin = re.sub(r"\[.+?\]", lambda match: match.group().lower(), line.strip())
-            else:
-                pinyin = re.sub(r"\[.+?\]", to_pinyin, line.strip())
+            pinyin = re.sub(r"\[.+?\]", format_pinyin, line.strip())
+            if not args.is_number:
+                pinyin = re.sub(r"\[.+?\]", to_pinyin, pinyin)
 
             chars, pronunciation, meaning = re.split(r" \[|\] ", pinyin, 2)
             matches = chars.split()
