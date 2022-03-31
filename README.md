@@ -16,7 +16,7 @@ It is also possible to use bullet points as the seperator instead of commas and 
 
 ## Download
 
-https://github.com/anttipham/cc-cedict-for-yomichan/releases/latest
+<https://github.com/anttipham/cc-cedict-for-yomichan/releases/latest>
 
 ### Install
 
@@ -27,10 +27,12 @@ https://github.com/anttipham/cc-cedict-for-yomichan/releases/latest
 
 ### Build
 
-CC-CEDICT can be downloaded from here. https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+CC-CEDICT can be downloaded from here. <https://www.mdbg.net/chinese/dictionary?page=cc-cedict>
 
 Run by typing
-```
+
+```bash
 python main.py <unpacked cc-cedict filepath>
 ```
+
 If you want bullet point seperators, use `--seperate` flag. Pinyin numbers can be enabled with `--pinyin-numbers` flag.
