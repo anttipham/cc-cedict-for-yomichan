@@ -14,7 +14,8 @@ It is also possible to use bullet points as the seperator instead of commas and 
 
 ![Yomichan with 课 opened with bullet points as the seperator and pinyin with number tones](img/课-seperate-pinyinnumber.PNG)
 
-### Download
+## Download
+
 https://github.com/anttipham/cc-cedict-for-yomichan/releases/latest
 
 ### Install
@@ -30,6 +31,6 @@ CC-CEDICT can be downloaded from here. https://www.mdbg.net/chinese/dictionary?p
 
 Run by typing
 ```
-main.py <unpacked cc-cedict filepath>
+python main.py <unpacked cc-cedict filepath>
 ```
 If you want bullet point seperators, use `--seperate` flag. Pinyin numbers can be enabled with `--pinyin-numbers` flag.
